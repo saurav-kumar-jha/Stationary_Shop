@@ -20,7 +20,7 @@ const PRODUCTS = [
     },
     {
         id: 2,
-        name: "Gel Pen Pack",
+        name: "Gel Pen Pack (Pack of 6)",
         price: 90,
         category: "Office",
         image:
@@ -28,7 +28,7 @@ const PRODUCTS = [
     },
     {
         id: 3,
-        name: "Sticky Notes",
+        name: "Sticky Notes (Pack of 6)",
         price: 60,
         category: "Student",
         image:
@@ -226,7 +226,7 @@ export function SingleProductPage() {
           <img src={product.image} alt={product.name} className="w-full rounded-2xl object-cover" />
           <div className="space-y-4">
             <h2 className="text-3xl font-bold text-gray-800">{product.name}</h2>
-            <p className="text-2xl text-primary font-semibold">₹{product.price}</p>
+            <p className="text-2xl text-primary flex items-center font-semibold">₹{product.price}&nbsp;<span className="text-[10px] text-zinc-600 ">with COD</span> </p>
   
             <p className="text-gray-600">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, officia.

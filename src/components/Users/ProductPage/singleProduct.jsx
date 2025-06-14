@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Button } from "../ui/button";
+import { Button } from "../../ui/button";
 import { ShoppingCart } from "lucide-react";
-import { Textarea } from "../ui/textarea";
-import { Card, CardContent } from "../ui/card";
+import { Textarea } from "../../ui/textarea";
+import { Card, CardContent } from "../../ui/card";
 
 const PRODUCTS = [
   {
@@ -106,7 +106,7 @@ export function SingleProductPage() {
           <img src={product.image} alt={product.name} className="w-full rounded-2xl object-cover" />
           <div className="space-y-4">
             <h2 className="text-3xl font-bold text-gray-800">{product.name}</h2>
-            <p className="text-2xl text-primary font-semibold">₹{product.price}</p>
+            <p className="text-2xl text-primary font-semibold">₹{product.price}/--</p>
   
             <p className="text-gray-600">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, officia.

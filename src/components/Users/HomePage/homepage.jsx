@@ -2,7 +2,6 @@
 import { Testimonal } from "./testimonial/testimonal"
 import { Location } from "./Locations/location"
 import { Hero_2 } from "./Locations/hero-2"
-import { Nav } from "../Navbar/nav"
 import { Accordian } from "./faqs/accordian"
 
 

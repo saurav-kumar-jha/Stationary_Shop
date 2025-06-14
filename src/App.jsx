@@ -1,8 +1,11 @@
 import { createBrowserRouter, Outlet, RouterProvider, useLocation } from 'react-router-dom'
 import './App.css'
-import { Homepage } from './components/HomePage/homepage'
-import { Nav } from './components/Navbar/nav'
-import { ProductListingPage, SingleProductPage } from './components/ProductPage/product'
+import { Homepage } from './components/Users/HomePage/homepage'
+import { Nav } from './components/Users/Navbar/nav'
+import { ProductListingPage, SingleProductPage } from './components/Users/ProductPage/product'
+import Footer from './components/Users/HomePage/footer/footer'
+import { Location } from './components/Users/HomePage/Locations/location'
+import { HomePage } from './components/Admin/HomePage/homepage'
 
 const Home = () => {
   const navigate = useLocation()
@@ -12,7 +15,17 @@ const Home = () => {
       {
         navigate.pathname == "/" ? (<Homepage/> ):(<Outlet/>)
       }
-      {/* <Homepage /> */}
+      <Footer/>
+    </>
+  )
+}
+
+const Contact = ()=>{
+  return(
+    <>
+      <div>
+        <Location/>
+      </div>
     </>
   )
 }
@@ -28,8 +41,16 @@ const router = createBrowserRouter([
     {
       path:"/products/:id",
       element:<SingleProductPage/>
+    },
+    {
+      path:"/contact",
+      element:<Contact/>
     }
   ]
+  },
+  {
+    path:"/admin",
+    element:<HomePage/>
   }
 ])
 
