@@ -17,12 +17,19 @@ import {
     MoveRight,
     ChevronRight,
   } from "lucide-react";
+import { useNavigate } from "react-router-dom";
   
   export default function AdminSidebar() {
+    const navigate = useNavigate()
+
+    const handleAddProduct = (e)=>{
+      e.preventDefault()
+      navigate("/admin/add-product")
+    }
     return (
       <NavigationMenu
         orientation="vertical"
-        className="fixed left-0 top-0 h-screen w-64
+        className="fixed left-0 top-0 h-screen w-[15%]
                    bg-white dark:bg-zinc-900
                    text-zinc-700 dark:text-zinc-200
                    border-r border-zinc-200 dark:border-zinc-800
@@ -33,7 +40,6 @@ import {
           <LayoutDashboard className="w-5 h-5" />
           Admin Panel
         </div>
-  
         {/* Navigation List */}
         <NavigationMenuList className="flex-1 flex flex-col px-4 py-6 gap-4 overflow-y-auto">
   
@@ -49,7 +55,7 @@ import {
                 <Boxes className="w-4 h-4" />
                 All Products
               </NavigationMenuLink>
-              <NavigationMenuLink className="flex items-center cursor-pointer gap-2 px-3 py-2 rounded hover:bg-zinc-100 dark:hover:bg-zinc-800">
+              <NavigationMenuLink onClick={handleAddProduct} className="flex items-center cursor-pointer gap-2 px-3 py-2 rounded hover:bg-zinc-100 dark:hover:bg-zinc-800">
                 <PlusCircle className="w-4 h-4" />
                 Add Product
               </NavigationMenuLink>

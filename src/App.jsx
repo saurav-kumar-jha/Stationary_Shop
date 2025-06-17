@@ -6,6 +6,7 @@ import { ProductListingPage, SingleProductPage } from './components/Users/Produc
 import Footer from './components/Users/HomePage/footer/footer'
 import { Location } from './components/Users/HomePage/Locations/location'
 import { HomePage } from './components/Admin/HomePage/homepage'
+import Add_Product from './components/Admin/Product/addProduct'
 
 const Home = () => {
   const navigate = useLocation()
@@ -50,7 +51,11 @@ const router = createBrowserRouter([
   },
   {
     path:"/admin",
-    element:<HomePage/>
+    element:<HomePage/>,
+    children:[{
+      path:"/admin/add-product",
+      element:<Add_Product/>
+    }]
   }
 ])
 
